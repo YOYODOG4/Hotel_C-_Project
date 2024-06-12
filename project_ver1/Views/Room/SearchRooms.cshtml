@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "SearchRooms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var checkInDate = ViewBag.CheckInDate?.ToString("yyyy-MM-dd"); ;
+    var checkOutDate = ViewBag.CheckOutDate?.ToString("yyyy-MM-dd"); ;
+}
+<style>
+    .room-card {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+        .room-card img {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            width: 100%;
+            height: auto;
+        }
+
+    .book-now-btn {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+    }
+</style>
+@* @model List<project_ver1.Models.Rooms> *@
+
+@if (Model != null && Model.Count > 0)
+{
+    <script>
+        function bookRoom(roomId, checkInDate, checkOutDate) {
+            var url = '@Url.Action("BookRoom", "Room")' + '?roomId=' + roomId + '&checkInDate=' + checkInDate + '&checkOutDate=' + checkOutDate;
+            window.location.href = url;
+        }
+    </script>
+    <h2>搜尋結果</h2>
+    <p>可住的房間數: @Model.Count</p>
+
+    <div class="row">
+        @foreach (var room in Model)
+        {
+            <div class="room-card">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="~/image/booking4.jpg" class="card-img" alt="@room.ID">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"> 房號：@room.ID</h5>
+                            <p class="card-text" id="checkInDate">@checkInDate</p>
+                            <p class="card-text" id="checkOutDate">@checkOutDate</p>
+                            <span class="badge badge-primary">免費Wi-Fi</span>
+                            <span class="badge badge-secondary">早餐</span>
+                            <span class="badge badge-success">海景</span>
+                            <button class="btn btn-danger book-now-btn" onclick="bookRoom(@room.ID, '@checkInDate', '@checkOutDate')">馬上訂房</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No available rooms found.</p>
+}
