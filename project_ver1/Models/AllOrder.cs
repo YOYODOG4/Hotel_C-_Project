@@ -23,3 +23,27 @@ public class CombinedOrderViewModel
     public List<AgriculturalOrderModel> AgriculturalOrders { get; set; }
     public List<RoomOrderModel> RoomOrders { get; set; }
 }
+public class RoomOrderViewModel
+{
+    public int OrderID { get; set; }
+    public int CustomerID { get; set; }
+    public string CustomerName { get; set; }
+    public string? CustomerPhone { get; set; }
+    public string? CustomerAddress { get; set; }
+    public string? CustomerEmail { get; set; }
+    public DateTime OrderTime { get; set; }
+    public DateTime CheckIn { get; set; }
+    public DateTime CheckOut { get; set; }
+    public bool OrderFinished { get; set; }
+    public int? EmployeeID { get; set; }
+    public string EmployeeName { get; set; }
+    public int? SumPrice { get; set; }
+    public List<RoomOrderDetailViewModel> RoomOrderDetails { get; set; }
+}
+
+public class RoomOrderDetailViewModel
+{
+    public int RoomID { get; set; }
+    public string RoomCategory { get; set; }
+    public int? Price { get; set; }
+}

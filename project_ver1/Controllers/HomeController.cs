@@ -65,6 +65,10 @@ namespace project_ver1.Controllers
             //_context.SaveChanges();
             return View();
         }
+        public IActionResult Ecpay()
+        {
+            return View();
+        }
 
         public ActionResult Order()
         {
@@ -316,8 +320,69 @@ namespace project_ver1.Controllers
         //==============================================================
 
 
+        //==============================================================
+        //­û¤u­q©Ð
+        public async Task<IActionResult> BackstageRoom()
+        {
+            SetUserViewBag();
+
+            if (HttpContext.Session.GetInt32("EmployeeId") != null)
+            {
+                var roomOrders = await _context.RoomOrder
+                    .Include(ro => ro.Customer)
+                    .Include(ro => ro.Employee)
+                    .Include(ro => ro.RoomOrderDetails)
+                        .ThenInclude(rod => rod.Room)
+                        .ThenInclude(r => r.Category)
+                    .ToListAsync();
+
+                var viewModel = roomOrders.Select(ro => new RoomOrderViewModel
+                {
+                    OrderID = ro.ID,
+                    CustomerID = ro.CustomerID,
+                    CustomerName = ro.Customer.Name,
+                    CustomerPhone = ro.Customer.Phone,
+                    CustomerAddress = ro.Customer.Address,
+                    CustomerEmail = ro.Customer.Email,
+                    OrderTime = ro.OrderTime,
+                    CheckIn = ro.CheckIn,
+                    CheckOut = ro.CheckOut,
+                    OrderFinished = ro.OrderFinished,
+                    EmployeeID = ro.EmployeeID,
+                    EmployeeName = ro.Employee?.Name,
+                    SumPrice = ro.SumPrice,
+                    RoomOrderDetails = ro.RoomOrderDetails.Select(rod => new RoomOrderDetailViewModel
+                    {
+                        RoomID = rod.RoomID,
+                        RoomCategory = rod.Room.Category.Name,
+                        Price = rod.Price
+                    }).ToList()
+                }).ToList();
+
+                return View(viewModel);
+            }
+            else
+            {
+                return RedirectToAction("Member", "Home");
+            }
+        }
 
 
+        [HttpPost]
+        public IActionResult BackstageRoomEdit(int orderId, int employeeId)
+        {
+            var orderUpdate = _context.RoomOrder.FirstOrDefault(c => c.ID == orderId);
+
+            if (orderUpdate != null)
+            {
+                orderUpdate.OrderFinished = true;
+                orderUpdate.EmployeeID = employeeId;
+                _context.SaveChanges();
+            }
+
+            return RedirectToAction("BackstageRoom");
+        }
+        //==============================================================
 
 
         //==============================================================

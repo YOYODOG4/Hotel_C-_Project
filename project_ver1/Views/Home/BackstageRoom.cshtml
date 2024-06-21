@@ -1,0 +1,408 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "BackstageRoom";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "BackstageRoom";
+}
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+    .mb-box {
+        width: 55%;
+        padding: 120px;
+        border-radius: 15px;
+        border: 2px solid hsla(0, 0%, 85%, 1);
+        margin: 0 auto;
+        background-color: rgba(222, 237, 240, 0.953);
+        box-shadow: 6px 6px 6px 2px gray;
+    }
+
+
+
+    .order {
+        position: relative;
+        top: -150px;
+        left: 40px;
+        text-decoration: none;
+        border: none;
+        padding: 5px;
+        width: 15%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        color: whitesmoke;
+        cursor: pointer;
+        font-size: 25px;
+    }
+
+        .order:hover {
+            background-color: gray;
+        }
+
+    .logout {
+        text-decoration: none;
+        border: none;
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 5px;
+        width: 70%;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        color: white;
+        cursor: pointer;
+        font-size: 25px;
+        background-color: #6A4028;
+    }
+
+        .logout:hover {
+            background-color: #563F2E;
+            color: white;
+        }
+
+    .order_F {
+        border: 2px solid hsla(0, 0%, 85%, 1);
+        padding: 5px;
+    }
+
+    .order_R {
+        border: 2px solid hsla(0, 0%, 85%, 1);
+        padding: 5px;
+    }
+
+    .T-title:hover {
+        background-color: black;
+    }
+
+    .btn-custom {
+        background-color: #1B813E;
+        border-color: #1B813E;
+    }
+
+        .btn-custom:hover {
+            background-color: #7BA23F;
+            border-color: #7BA23F;
+        }
+
+    .sidebar {
+        width: 250px;
+        position: absolute;
+        left: 0;
+        height: 100%;
+        background-color: #967249;
+        border-right: 1px solid #dee2e6;
+    }
+
+        .sidebar a {
+            padding: 20px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            font-weight: bold;
+            font-size: 23px;
+        }
+
+            .sidebar a:hover {
+                background-color: #7D532C;
+            }
+
+    /* 捲軸 */
+    .table-container {
+        max-height: 700px;
+        overflow-y: auto;
+        font-size: 18px;
+    }
+
+        .table-container table {
+            table-layout: fixed;
+        }
+
+        .table-container td {
+            word-wrap: break-word;
+            white-space: normal;
+        }
+
+    .apple {
+        position: sticky;
+        top: -1px;
+        z-index: 10;
+    }
+
+    h1 {
+        font-weight: normal;
+    }
+
+    .viewdes {
+        height: 1000px;
+        margin-left: 300px;
+        margin-right: 100px;
+    }
+
+    .filterSelect {
+        width: 130px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .SearchForm {
+        width: 200px;
+        height: 40px;
+        font-size: 25px;
+        margin-left: 10px;
+    }
+    /* -------------------------- */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+</style>
+
+<div style="height:1000px;">
+    <div class="sidebar" style="height:1000px;">
+        <a href="@Url.Action("Backstage", "Home")">員工主頁</a>
+        <a href="@Url.Action("BackstageContact", "Home")">顧客問題</a>
+        <a href="@Url.Action("BackstageProduct", "Home")">產品訂單</a>
+        <a href="@Url.Action("BackstageRoom", "Home")">訂房訂單</a>
+        <a href="@Url.Action("BackstageMember", "Home")">會員資料管理</a>
+        <br />
+        <br />
+        <form id="logoutForm" asp-action="Logout" asp-controller="Home" method="post">
+            <button type="submit" class="logout btn ">登出</button>
+        </form>
+
+    </div>
+    <div class="viewdes">
+
+        <br />
+        <h1 class="text-center " style="font-family: 'Noto Sans TC', sans-serif;font-size:50px;margin-top:40px;">訂房訂單</h1><br />
+        <div style="display: flex; align-items: center;">
+            <select id="filterSelect" class="filterSelect" style="margin-right: 10px;width:15%;">
+                <option value="all">所有訂單</option>
+                <option value="unanswered">尚未完成</option>
+                <option value="answered">已完成</option>
+            </select>
+            <form id="searchForm" class="SearchForm" style="width:100%; align-items: center;">
+                
+                <input type="text" id="searchInput" style="width:25%;" placeholder="請輸入顧客姓名">
+
+                <label for="checkinInput" style="width:10%;">入住日期:</label>
+                <input type="date" id="checkinInput" class="SearchForm" style="height:40px; width:15%;margin-right: 10px;margin-left:0px;">
+
+                <label for="checkoutInput" style="width:10%;">退房日期:</label>
+                <input type="date" id="checkoutInput" class="SearchForm" style="height:40px;width:15%;margin-left:0px; margin-right: 10px;">
+
+                <button type="button" class="btn btn-info" onclick="handleSearch()" style="width:12%; height:50px; font-size: 25px; margin-left: 10px;padding:2px;">
+                    搜尋
+                </button>
+            </form>
+
+        </div>
+        <br />
+        <br />
+        <div class="table-container">
+            <table class="table table-hover order_R" style="background-color:white;">
+                @if (Model.Count > 0)
+                {
+                    <thead class=" table table-dark apple">
+                        <tr>
+                            <th>訂單編號</th>
+                            <th>顧客姓名</th>
+                            <th>下單時間</th>
+                            <th>入住日期</th>
+                            <th>退房日期</th>
+                            <th style="width:200px; text-align: center;">房間資訊</th>
+                            <th>總價</th>
+                            <th>訂單狀態</th>
+                            <th>完成訂單</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var order in Model)
+                        {
+                            <tr>
+                                <td onclick="showModal('姓名:@order.CustomerName', '電話:@order.CustomerPhone', '地址:@order.CustomerAddress')">@order.OrderID</td>
+                                <td onclick="showModal('姓名:@order.CustomerName', '電話:@order.CustomerPhone', '地址:@order.CustomerAddress')">@order.CustomerName</td>
+                                <td>@order.OrderTime</td>
+                                <td>@order.CheckIn.ToString("yyyy-MM-dd")</td>
+                                <td>@order.CheckOut.ToString("yyyy-MM-dd")</td>
+                                <td>
+                                    <ul>
+                                        @foreach (var detail in order.RoomOrderDetails)
+                                        {
+                                            <div style="height:120px;text-align:left;">
+                                            <li>
+                                                房號: @detail.RoomID <br />
+                                                房型: @detail.RoomCategory <br />
+                                                單價: NT$@detail.Price
+                                            </li>
+                    </div>
+                                        }
+                </ul>
+                </td>
+
+                <td>
+                    <p>NT$@order.SumPrice</p>
+
+                </td>
+                <td>
+                    <p class="@(order.OrderFinished ? "text-success" : "text-danger")">
+                                        @(order.OrderFinished ? "已完成" : "尚未完成")
+                    </p>
+                </td>
+                <td>
+                                    @if (!order.OrderFinished)
+                                    {
+                        <form asp-action="BackstageRoomEdit" asp-controller="Home" method="post">
+                            <input type="hidden" name="orderId" value="@order.OrderID" />
+                            <input type="hidden" name="employeeId" value="@ViewBag.UserId" />
+                            <button type="submit" class="btn btn-primary btn-custom">完成</button>
+                        </form>
+                                    }
+                                    else
+                                    {
+                        <p>已完成</p>
+                                    }
+                </td>
+                </tr>
+                        }
+            </tbody>
+                }
+                else
+                {
+            <tbody>
+                <tr>
+                    <td colspan="9">
+                        <h1 style="text-align:center; color:darkolivegreen">目前沒有訂單</h1>
+                    </td>
+                </tr>
+            </tbody>
+                }
+        </table>
+    </div>
+
+
+        @*  <form id="logoutForm" asp-action="Logout" asp-controller="Home" method="post">
+    <button type="submit" class="logout btn  btn-danger">登出</button>
+    </form> *@
+
+</div>
+<br />
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2 class="text-center" style=" font-family: 'Noto Sans TC', sans-serif;font-size:45px;">顧客聯絡資訊</h2>
+        <br />
+        <p id="modalTitle" style="font-family: 'Noto Sans TC', sans-serif;font-size:20px;"></p>
+        <p id="modalTime" style="font-family: 'Noto Sans TC', sans-serif;font-size:20px;"></p>
+        <p id="modalContent" style="font-family: 'Noto Sans TC', sans-serif;font-size:20px;"></p>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filterSelect = document.getElementById('filterSelect');
+        filterSelect.addEventListener('change', function () {
+            const filterValue = filterSelect.value;
+            const rows = document.querySelectorAll('.order_R tbody tr');
+
+            rows.forEach(row => {
+                const statusCell = row.querySelector('td:nth-child(8) p');
+                const status = statusCell.textContent.trim();
+
+                if (filterValue === 'all') {
+                    row.style.display = '';
+                } else if (filterValue === 'unanswered' && status === '尚未完成') {
+                    row.style.display = '';
+                } else if (filterValue === 'answered' && status === '已完成') {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    });
+
+    function showModal(title, time, content) {
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalTime").innerText = time;
+        document.getElementById("modalContent").innerText = content;
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == document.getElementById("myModal")) {
+            closeModal();
+        }
+    }
+    function handleSearch() {
+        const searchText = document.getElementById('searchInput').value.trim().toLowerCase();
+        const checkinDate = document.getElementById('checkinInput').value;
+        const checkoutDate = document.getElementById('checkoutInput').value;
+        const rows = document.querySelectorAll('.order_R tbody tr');
+
+        rows.forEach(row => {
+            const customerNameCell = row.querySelector('td:nth-child(2)');
+            const customerName = customerNameCell.textContent.trim().toLowerCase();
+            const checkinCell = row.querySelector('td:nth-child(4)').textContent.trim();
+            const checkoutCell = row.querySelector('td:nth-child(5)').textContent.trim();
+
+         
+            const checkinCellDate = new Date(checkinCell);
+            const checkoutCellDate = new Date(checkoutCell);
+
+            const matchesName = customerName.includes(searchText);
+            const matchesCheckin = (checkinDate === '' || checkinCell === checkinDate);
+            const matchesCheckout = (checkoutDate === '' || checkoutCell === checkoutDate);
+
+            
+            const isValidCheckin = !isNaN(checkinCellDate.getTime());
+            const isValidCheckout = !isNaN(checkoutCellDate.getTime());
+
+            if (matchesName && matchesCheckin && matchesCheckout && isValidCheckin && isValidCheckout) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+
+</script>

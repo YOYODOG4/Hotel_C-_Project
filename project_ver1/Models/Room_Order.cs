@@ -26,4 +26,5 @@ public partial class Room_Order
     public virtual Employee? Employee { get; set; }
 
     public virtual ICollection<Room_Order_Details> RoomOrderDetails { get; set; } = new List<Room_Order_Details>();
+
 }

@@ -1,0 +1,56 @@
+﻿@model System.Collections.Generic.Dictionary<string, string>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .btn-primary {
+        position: absolute;
+        top: 250px;
+        left: 900px;
+    }
+</style>
+<form id="form" name="form" method="POST" action="https://payment-stage.ecpay.com.tw/Cashier/AioCheckOut/V5" target="_blank>
+    <!--step2 : 收到後端的值印出來-->
+    <button type="submit" class="btn btn-primary" style="font-size: 1.5rem;padding: 10px 20px; position:relative" id="checkoutBtn">
+        前往結帳頁面
+    </button>
+    @foreach (var key in @Model.Keys.ToList())
+    {
+        //input 這個屬性(type)="hidden"我們把它便隱形，不然的話我們的RoomEpay/index會跑出我們傳給綠界的訂單資訊
+        //C#的在視圖裡面都要加@，靠這個頁面的第一行Dictionary<string(key), string(value)>把它input的值推出去(form表單包著的內容)
+        <input type="hidden" name="@key" value="@Model[key]" />
+
+        <br />
+    }
+    
+</form>
+<!-- js套件 -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-twzipcode@1.7.14/jquery.twzipcode.min.js"></script>
+<script>
+    //這裡的#對應到id去找叫checkoutBtn
+    //這裡不需要下面這一些東西也可以跑
+    $("#checkoutBtn").on('click', (e) => {
+        //e.preventDefault(); //因為送出就跳轉到綠界，這個可以停住確認自己的console.log的內容
+        let formData = $("#form").serializeArray();
+        var json = {};
+        $.each(formData, function () {
+            json[this.name] = this.value || "";
+        });
+        console.log(json);
+        //step3 : 新增訂單到資料庫
+        $.ajax({
+            type: 'POST',
+            url: 'https://localhost:44325/api/Ecpay/AddOrders',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(json),
+            success: function (res) {
+                console.log(res);
+            },
+            error: function (err) { console.log(err); },
+        });
+    });
+</script>
+

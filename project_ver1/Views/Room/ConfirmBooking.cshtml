@@ -1,0 +1,133 @@
+﻿@{
+    ViewData["Title"] = "房間購物車";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "房間購物車";
+    var checkInDate = ViewBag.CheckInDate?.ToString("yyyy-MM-dd"); ;
+    var checkOutDate = ViewBag.CheckOutDate?.ToString("yyyy-MM-dd"); ;
+    var ID_List = ViewBag.Room_List as List<int>;
+    var roomCategory = ViewBag.roomCategory;
+
+}
+<style>
+    .order_F {
+        border: 2px solid hsla(0, 0%, 85%, 1);
+        padding: 5px;
+    }
+
+    .order_R {
+        border: 2px solid hsla(0, 0%, 85%, 1);
+        padding: 5px;
+    }
+
+    .T-title:hover {
+        background-color: black;
+    }
+
+    .btn-center {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .btn-primary {
+        font-size: 1.5rem;
+        padding: 10px 20px;
+    }
+
+    .go-to-product {
+        position: absolute;
+        top: 120px;
+        right: 150px;
+        z-index: 9999;
+    }
+
+</style>
+
+<div class="container-md">
+
+    <br />
+    <div class="row">
+        <div class="col">
+            <h1><strong>購買清單</strong></h1>
+        </div>
+        <div class="col-auto">
+            <form method="post" action="@Url.Action("Index")" class="container-fluid">
+                <input type="hidden" name="checkInDate" value="2024-06-21" />
+                <input type="hidden" name="checkOutDate" value="2024-06-28" />
+                <input type="hidden" name="roomType" value="1" />
+                <button class="btn btn-info float-right" type="submit">前往選購其他商品</button>
+            </form>
+        </div>
+    </div>
+    <br />
+    <table class="table table-hover order_F" style="background-color:white;">
+        <thead class="table table-dark T-title">
+            <tr>
+                <th scope="col">欄位</th>
+                <th scope="col">房間圖片</th>
+                <th scope="col">房號</th>
+                <th scope="col">價格</th>
+                <th scope="col">刪除</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int i = 0;
+                bool hasItems =  ID_List != null;
+            }
+            @if (hasItems)
+            {
+                foreach (var product in Model)
+                {
+                    <tr>
+                        <th scope="row">@(i + 1)</th>
+                        <td><img src="@Url.Content(@product.Image)" alt="News Image" width="100px" height="100px" /></td>
+                        <td>@product.ID</td>
+                        <td>@product.Price</td>
+                        @{
+                            i++;
+                        }
+                        <td>
+                            <form method="post" action="@Url.Action("Remove")">
+                                <input type="hidden" name="productId" value="@product.ID" />
+                                <input type="hidden" name="action" value="delete" />
+                                <input type="hidden" name="roomCategory" value="@roomCategory" />
+                                <button type="submit" class="btn btn-danger">刪除</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="7" style="font-size: 2rem; text-align: center; font-weight: bold;">購物車內沒有商品</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<br />
+<br />
+
+<div class="btn-center">
+    @if (hasItems)
+    {
+        <form id="purchaseForm" method="post" action="@Url.Action("SaveToDatabase")">
+            <button type="submit" class="btn btn-primary" onclick="confirmPurchase()">確定購買</button>
+        </form>
+
+
+    }
+
+</div>
+
+<script>
+    function confirmPurchase() {
+        if (confirm('購買成功，訂單已送出')) {
+            document.getElementById('purchaseForm').submit();
+            window.location.href = '@Url.Action("Index", "Room")';
+        }
+    }
+</script>

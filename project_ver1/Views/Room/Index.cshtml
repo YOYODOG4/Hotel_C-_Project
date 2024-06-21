@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var checkInDate = ViewBag.CheckInDate != null ? ViewBag.CheckInDate.ToString("yyyy-MM-dd") : "";
+    var checkOutDate = ViewBag.CheckOutDate != null ? ViewBag.CheckOutDate.ToString("yyyy-MM-dd") : "";
 }
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <div class="container">
@@ -10,7 +12,7 @@
 
         <div class="form-group">
             <label for="roomType">選擇房間類別：</label>
-            <select class="form-control" id="roomType" name="roomType">
+            <select class="form-control" id="roomType" name="roomType" required>
                 <option value="1">一人房</option>
                 <option value="2">雙人房</option>
                 <option value="3">三人房</option>
@@ -20,12 +22,12 @@
 
         <div class="form-group">
             <label for="checkInDate">入住日期：</label>
-            <input name="checkInDate" type="date" class="form-control" id="checkInDate" onchange="updateCheckOutDate()">
+            <input name="checkInDate" type="date" class="form-control" id="checkInDate" onchange="updateCheckOutDate()" value="@checkInDate" required>
         </div>
 
         <div class="form-group">
             <label for="checkOutDate">退房日期：</label>
-            <input type="date" class="form-control" id="checkOutDate" name="checkOutDate">
+            <input type="date" class="form-control" id="checkOutDate" name="checkOutDate" value="@checkOutDate" required>
         </div>
         <button type="submit" class="btn btn-primary">搜尋房間</button>
     </form>
@@ -46,28 +48,4 @@
         checkOutDate.min = checkInDate;
     }
 
-    // function searchRooms() {
-    //     var roomType = $('#roomType').val();
-    //     var checkInDate = $('#checkInDate').val();
-    //     var checkOutDate = $('#checkOutDate').val();
-
-    //     $.ajax({
-    //         url: '@Url.Action("SearchRooms", "Room")',
-    //         type: 'POST',
-    //         data: {
-    //             roomType: roomType,
-    //             checkInDate: checkInDate,
-    //             checkOutDate: checkOutDate
-    //         },
-    //         success: function (data) {
-    //             $('#searchResults').html(data);
-    //         },
-    //         error: function (xhr, status, error) {
-    //             console.error(error);
-    //         }
-    //     });
-    // }
 </script>
-
-
-

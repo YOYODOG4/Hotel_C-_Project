@@ -70,11 +70,6 @@ namespace project_ver1.Controllers
             return View(product);
         }
 
-        private void Get_AgriculturalOrder()
-        {
-
-
-        }
         [HttpPost]
         public IActionResult ShoppingCart(SetOrder setOrder)
         {
@@ -302,61 +297,6 @@ namespace project_ver1.Controllers
             }
             return View(customer);
         }
-
-
-        //============================================================
-
-        //        Agricultural_Order ao = new Agricultural_Order();
-        //                if (HttpContext.Session.GetInt32("OrderID") == null)
-        //                {
-
-        //                    // create a new Agricultural_Order data and insert into Agricultural_Order
-        //                    ao.CustomerID = (int) HttpContext.Session.GetInt32("UserId");
-        //        ao.OderTime = DateTime.Now;
-        //                    ao.OrderFinished = false;
-        //                    ao.EmployeeID = null;
-        //                    ao.SumPrice = 0;
-        //                    _context.AgriculturalOrder.Add(ao);
-        //                    _context.SaveChanges();
-
-        //                    //set OrderID in session Storage
-        //                    HttpContext.Session.SetInt32("OrderID", ao.ID);
-        //                }
-        //    // create a new Agricultural_Order_Details
-        //    Agricultural_Order_Details aod = new Agricultural_Order_Details
-        //    {
-        //        OrderID = (int)HttpContext.Session.GetInt32("OrderID"),
-        //        ProductID = setOrder.ProductID,
-        //        Count = setOrder.Count,
-        //        Price = setOrder.Price
-        //    };
-        //    //if this aod is not exists (the same OrderID and ProductID)
-        //    var getDetail = _context.AgriculturalOrderDetail.Find(aod.OrderID, aod.ProductID);
-        //    var getOrder = _context.AgriculturalOrder.Find(HttpContext.Session.GetInt32("OrderID"));
-
-        //                if (getDetail == null)
-        //                {
-        //                    // add the price 
-        //                    getOrder.SumPrice += aod.Price* aod.Count;
-        //    //insert into the table
-        //    _context.AgriculturalOrderDetail.Add(aod);
-        //                }
-        //                else
-        //{
-        //    // minus the price
-        //    getOrder.SumPrice -= getDetail.Price * getDetail.Count;
-        //    // edit the row
-        //    getDetail.Count = aod.Count;
-        //    getDetail.Price = aod.Price;
-        //    // add the price
-        //    getOrder.SumPrice += getDetail.Price * getDetail.Count;
-        //}
-
-        //_context.SaveChanges();
-
-
-
-
     }
 }
 

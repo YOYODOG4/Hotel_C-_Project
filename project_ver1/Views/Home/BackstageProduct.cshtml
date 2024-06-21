@@ -7,6 +7,7 @@
     ViewBag.Title = "BackstageProduct";
 }
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
     .mb-box {
         width: 55%;
@@ -18,18 +19,7 @@
         box-shadow: 6px 6px 6px 2px gray;
     }
 
-    .logout {
-        text-decoration: none;
-        border: none;
-        background-color: rgba(255, 0, 0, 0.87);
-        padding: 5px;
-        width: 35%;
-        border-radius: 20px;
-        margin-bottom: 20px;
-        color: white;
-        cursor: pointer;
-        font-size: 25px;
-    }
+
 
     .order {
         position: relative;
@@ -53,15 +43,22 @@
     .logout {
         text-decoration: none;
         border: none;
-        background-color: rgba(255, 0, 0, 0.87);
+        margin-left: 15px;
+        margin-right: 15px;
         padding: 5px;
-        width: 35%;
+        width: 70%;
         border-radius: 20px;
         margin-bottom: 20px;
         color: white;
         cursor: pointer;
         font-size: 25px;
+        background-color: #6A4028;
     }
+
+        .logout:hover {
+            background-color: #563F2E;
+            color: white;
+        }
 
     .order_F {
         border: 2px solid hsla(0, 0%, 85%, 1);
@@ -89,31 +86,32 @@
 
     .sidebar {
         width: 250px;
-        position: fixed;
-        top: 100px;
+        position: absolute;
         left: 0;
-        height: 400px;
-        background-color: #f8f9fa;
+        height: 100%;
+        background-color: #967249;
         border-right: 1px solid #dee2e6;
-        padding-top: 20px;
     }
 
         .sidebar a {
-            padding: 10px 15px;
+            padding: 20px 25px;
             text-decoration: none;
             font-size: 18px;
-            color: #333;
+            color: white;
             display: block;
+            font-weight: bold;
+            font-size: 23px;
         }
 
             .sidebar a:hover {
-                background-color: #ddd;
+                background-color: #7D532C;
             }
 
     /* 捲軸 */
     .table-container {
-        max-height: 500px;
+        max-height: 700px;
         overflow-y: auto;
+        font-size: 18px;
     }
 
         .table-container table {
@@ -131,148 +129,266 @@
         z-index: 10;
     }
 
-</style>
+    h1 {
+        font-weight: normal;
+    }
 
-<div class="container-md">
-    <div class="sidebar">
+    .viewdes {
+        height: 1000px;
+        margin-left: 300px;
+        margin-right: 100px;
+    }
+
+    .filterSelect {
+        width: 130px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .SearchForm {
+        width: 200px;
+        height: 40px;
+        font-size: 25px;
+        margin-left: 10px;
+    }
+    /* -------------------------- */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+</style>
+<div style="height:1000px;">
+    <div class="sidebar" style="height:1000px;">
         <a href="@Url.Action("Backstage", "Home")">員工主頁</a>
         <a href="@Url.Action("BackstageContact", "Home")">顧客問題</a>
         <a href="@Url.Action("BackstageProduct", "Home")">產品訂單</a>
-        <a href="@Url.Action("News", "Home")">訂房訂單</a>
+        <a href="@Url.Action("BackstageRoom", "Home")">訂房訂單</a>
         <a href="@Url.Action("BackstageMember", "Home")">會員資料管理</a>
         <br />
         <br />
         <form id="logoutForm" asp-action="Logout" asp-controller="Home" method="post">
-            <button type="submit" class="logout btn  btn-danger">登出</button>
+            <button type="submit" class="logout btn ">登出</button>
         </form>
 
     </div>
-    <h1 class="text-center">產品訂單</h1>
-    <select id="filterSelect">
-        <option value="all">所有訂單</option>
-        <option value="unanswered">尚未完成</option>
-        <option value="answered">已完成</option>
-    </select>
-    <br />
-    <br />
-    <div class="table-container">
-        <table class="table table-hover order_R" style="background-color:white;">
-            @if (Model.Count > 0)
-            {
-                <thead class=" table table-dark apple">
-                    <tr>
-                        <th>訂單編號</th>
-                        <th>顧客姓名</th>
-                        <th>下單時間</th>
-                        <th>商品名稱</th>
-                        <th>商品數量</th>
-                        <th>商品單價</th>
-                        <th>總價</th>
-                        <th>訂單狀態</th>
-                        <th>完成訂單</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var order in Model)
-                    {
+    <div class="viewdes">
+
+        <br />
+        <h1 class="text-center " style="font-family: 'Noto Sans TC', sans-serif;font-size:50px;margin-top:40px;">產品訂單</h1><br />
+        <div style="display: flex; align-items: center;">
+
+            <select id="filterSelect" class="filterSelect" style="margin-right: 10px;width:15%;">
+                <option value="all">所有訂單</option>
+                <option value="unanswered">尚未完成</option>
+                <option value="answered">已完成</option>
+            </select>
+
+
+
+            <form id="searchForm" class="SearchForm" style="width:80%; align-items: center;">
+                <input type="text" id="searchInput" placeholder="請輸入顧客姓名">
+                <button type="submit" class="btn btn-info" style="width:15%; height:50px; font-size: 25px; margin-left: 10px;padding:2px;">
+                    搜尋
+                </button>
+            </form>
+        </div>
+
+        <br />
+        <br />
+        <div class="table-container">
+            <table class="table table-hover order_R" style="background-color:white;">
+                @if (Model.Count > 0)
+                {
+                    <thead class=" table table-dark apple">
                         <tr>
-                            <td>@order.ID</td>
-                            <td>@order.Customer.Name</td>
-                            <td>@order.OderTime</td>
-                            <td>
-                                @foreach (var detail in order.Agricultural_Order_Details)
-                                {
-                                   
-                                    <p>@detail.Product.Name</p>
-                                    <br />
-                                }
-                            </td>
-                            <td>
-                                @foreach (var detail in order.Agricultural_Order_Details)
-                                {
-                                   
-                                    <p>@detail.Count</p>
-                                    <br />
-                                    <br />
-                                }
-                            </td>
-                            <td>
-                                @foreach (var detail in order.Agricultural_Order_Details)
-                                {
-                                    
-                                    <p>@detail.Price</p>
-                                    <br />
-                                    <br />
-                                }
-                            </td>
-                            <td>@order.SumPrice</td>
-                            <td>
-                                <p class="@(order.OrderFinished ? "text-success" : "text-danger")">
-                                    @(order.OrderFinished ? "已完成" : "尚未完成")
-                                </p>
-                            </td>
-                            <td>
-                                @if (!order.OrderFinished)
-                                {
-                                    <form asp-action="BackstageProductEdit" asp-controller="Home" method="post">
-                                        <input type="hidden" name="orderId" value="@order.ID" />
-                                        <input type="hidden" name="employeeId" value="@ViewBag.UserId" />
-                                        <button type="submit" class="btn btn-primary btn-custom">完成</button>
-                                    </form>
-                                }
-                                else
-                                {
-                                    <p>已完成</p>
-                                }
+                            <th>訂單編號</th>
+                            <th>顧客姓名</th>
+                            <th>下單時間</th>
+                            <th style="width:200px;">商品名稱</th>
+                            <th style="text-align: center;">商品單價</th>
+                            <th style="text-align: center;">購買數量</th>
+                            <th>總價</th>
+                            <th>訂單狀態</th>
+                            <th>完成訂單</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var order in Model)
+                        {
+                            <tr>
+                                <td onclick="showModal('姓名:@order.Customer.Name', '電話:@order.Customer.Phone', '地址:@order.Customer.Address')">@order.ID</td>
+                                <td onclick="showModal('姓名:@order.Customer.Name', '電話:@order.Customer.Phone', '地址:@order.Customer.Address')">@order.Customer.Name</td>
+                                <td>@order.OderTime</td>
+                                <td>
+                                    @foreach (var detail in order.Agricultural_Order_Details)
+                                    {
+                                        <div style="height:65px;">
+                                            <p>@detail.Product.Name</p>
+                                        </div>
+
+
+                                    }
+                                </td>
+                                <td>
+                                    @foreach (var detail in order.Agricultural_Order_Details)
+                                    {
+                                        <div style="height:65px;text-align: center;">
+                                            <p>NT$@detail.Price</p>
+                                        </div>
+
+
+                                    }
+                                </td>
+                                <td>
+                                    @foreach (var detail in order.Agricultural_Order_Details)
+                                    {
+                                        <div style="height:65px;text-align: center;">
+                                            <p>@detail.Count</p>
+                                        </div>
+
+
+                                    }
+                                </td>
+                                <td>
+                                    <p>NT$@order.SumPrice</p>
+
+                                </td>
+                                <td>
+                                    <p class="@(order.OrderFinished ? "text-success" : "text-danger")">
+                                        @(order.OrderFinished ? "已完成" : "尚未完成")
+                                    </p>
+                                </td>
+                                <td>
+                                    @if (!order.OrderFinished)
+                                    {
+                                        <form asp-action="BackstageProductEdit" asp-controller="Home" method="post">
+                                            <input type="hidden" name="orderId" value="@order.ID" />
+                                            <input type="hidden" name="employeeId" value="@ViewBag.UserId" />
+                                            <button type="submit" class="btn btn-primary btn-custom">完成</button>
+                                        </form>
+                                    }
+                                    else
+                                    {
+                                        <p>已完成</p>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                }
+                else
+                {
+                    <tbody>
+                        <tr>
+                            <td colspan="9">
+                                <h1 style="text-align:center; color:darkolivegreen">目前沒有訂單</h1>
                             </td>
                         </tr>
-                    }
-                </tbody>
-            }
-            else
-            {
-                <tbody>
-                    <tr>
-                        <td colspan="9">
-                            <h1 style="text-align:center; color:darkolivegreen">目前沒有訂單</h1>
-                        </td>
-                    </tr>
-                </tbody>
-            }
-        </table>
+                    </tbody>
+                }
+            </table>
+        </div>
+
+
+        @*  <form id="logoutForm" asp-action="Logout" asp-controller="Home" method="post">
+        <button type="submit" class="logout btn  btn-danger">登出</button>
+        </form> *@
+
     </div>
+    <br />
 
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 class="text-center" style=" font-family: 'Noto Sans TC', sans-serif;font-size:45px;">寄件資料</h2>
+            <br />
+            <p id="modalTitle" style="font-family: 'Noto Sans TC', sans-serif;font-size:20px;"></p>
+            <p id="modalTime" style="font-family: 'Noto Sans TC', sans-serif;font-size:20px;"></p>
+            <p id="modalContent" style="font-family: 'Noto Sans TC', sans-serif;font-size:20px;"></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterSelect = document.getElementById('filterSelect');
+            filterSelect.addEventListener('change', function () {
+                filterOrders();
+            });
 
-    @*  <form id="logoutForm" asp-action="Logout" asp-controller="Home" method="post">
-    <button type="submit" class="logout btn  btn-danger">登出</button>
-    </form> *@
+            const searchForm = document.getElementById('searchForm');
+            searchForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                filterOrders();
+            });
+        });
 
-</div>
-<br />
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const filterSelect = document.getElementById('filterSelect');
-        filterSelect.addEventListener('change', function () {
-            const filterValue = filterSelect.value;
+        function filterOrders() {
+            const filterValue = document.getElementById('filterSelect').value.toLowerCase();
+            const searchText = document.getElementById('searchInput').value.toLowerCase().trim();
             const rows = document.querySelectorAll('.order_R tbody tr');
 
             rows.forEach(row => {
+                const customerName = row.querySelector('td:nth-child(2)').textContent.toLowerCase().trim();
                 const statusCell = row.querySelector('td:nth-child(8) p');
                 const status = statusCell.textContent.trim();
 
-                if (filterValue === 'all') {
-                    row.style.display = '';
-                } else if (filterValue === 'unanswered' && status === '尚未完成') {
-                    row.style.display = '';
-                } else if (filterValue === 'answered' && status === '已完成') {
+                if ((filterValue === 'all' || (filterValue === 'unanswered' && status === '尚未完成') || (filterValue === 'answered' && status === '已完成')) &&
+                    (customerName.includes(searchText))) {
                     row.style.display = '';
                 } else {
                     row.style.display = 'none';
                 }
             });
-        });
-    });
-</script>
+        }
 
+        function showModal(title, time, content) {
+            document.getElementById("modalTitle").innerText = title;
+            document.getElementById("modalTime").innerText = time;
+            document.getElementById("modalContent").innerText = content;
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == document.getElementById("myModal")) {
+                closeModal();
+            }
+        }
+    </script>
 
 

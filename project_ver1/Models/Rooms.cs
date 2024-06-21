@@ -20,6 +20,7 @@ public partial class Rooms
     public int? Price { get; set; }
 
     public int? Discount { get; set; }
+    public string? Image {  get; set; }
 
     public virtual Room_Category Category { get; set; } = null!;
 

@@ -22,19 +22,14 @@
             <label for="checkOutDate">退房日期：</label>
             <input type="date" class="form-control" id="checkOutDate" name="checkOutDate" value="@checkOutDate" readonly>
         </div>
-        @*         <div class="form-group">
-        <label for="name">姓名：</label>
-        <input type="text" class="form-control" id="name" name="name" required>
+        <div class="form-group">
+            <label for="roomId">房號：</label>
+            <input name="roomId" value="@Model.ID" readonly>
         </div>
         <div class="form-group">
-        <label for="email">Email：</label>
-        <input type="email" class="form-control" id="email" name="email" required>
+            <label for="Price">價格：</label>
+            <input name="Price" value="@Model.Price" readonly>
         </div>
-        <div class="form-group">
-        <label for="phone">電話：</label>
-        <input type="tel" class="form-control" id="phone" name="phone" required>
-        </div> *@
-        <input type="hidden" name="roomId" value="@Model.ID">
         <button type="submit" class="btn btn-primary">確認訂房</button>
     </form>
 </div>

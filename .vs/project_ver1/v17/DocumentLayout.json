@@ -1,62 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\",
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|c:\\users\\user\\desktop\\hotel\\hotel_c-_project\\project_ver1\\views\\home\\order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\home\\order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|c:\\users\\user\\source\\repos\\hotel_c-_project\\project_ver1\\controllers\\roomepaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\controllers\\roomepaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\views\\home\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\home\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\views\\home\\members_information.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\home\\members_information.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\controllers\\epaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\controllers\\epaycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\views\\home\\backstagecontact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\home\\backstagecontact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\views\\home\\member.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\home\\member.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\views\\home\\members_join.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\home\\members_join.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\views\\home\\news.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\home\\news.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\views\\room\\searchrooms.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\room\\searchrooms.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\views\\room\\bookroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\views\\room\\bookroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\room\\bookroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\views\\home\\order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\home\\order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\views\\room\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\room\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\views\\roomepay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CB9397D7-1148-4E16-8066-97055401D84A}|project_ver1\\project_ver1.csproj|solutionrelative:project_ver1\\views\\roomepay\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -65,181 +33,101 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 338,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 317,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ForgotPassword.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\ForgotPassword.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Home\\ForgotPassword.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\ForgotPassword.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Home\\ForgotPassword.cshtml",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAADoAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T07:47:41.982Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Order.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\Order.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Home\\Order.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\Order.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Home\\Order.cshtml",
-              "ViewState": "AQIAAG8AAAAAAAAAAAAAAHsAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T07:44:35.214Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Members_Information.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\Members_Information.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Home\\Members_Information.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\Members_Information.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Home\\Members_Information.cshtml",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAvwB4AAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T06:20:59.928Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Members_join.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\Members_join.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Home\\Members_join.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\Members_join.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Home\\Members_join.cshtml",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAADYAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T06:15:02.587Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "News.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\News.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Home\\News.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\News.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Home\\News.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T06:15:01.907Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "member.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\member.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Home\\member.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\member.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Home\\member.cshtml",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAAAFoAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T06:12:04.335Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "project_ver1\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "project_ver1\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAALAAAAAAAAAAAAAiwMIAAAA4AAAA",
+              "Title": "EpayController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Controllers\\EpayController.cs",
+              "RelativeDocumentMoniker": "project_ver1\\Controllers\\EpayController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Controllers\\EpayController.cs",
+              "RelativeToolTip": "project_ver1\\Controllers\\EpayController.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAzwB0AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T05:32:07.04Z"
+              "WhenOpened": "2024-06-21T03:55:09.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "project_ver1\\Controllers\\RoomController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "project_ver1\\Controllers\\RoomController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAAwE0AAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T03:54:33.648Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "About.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\About.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Home\\About.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\About.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Home\\About.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAD8AAAAOAAAA",
+              "Title": "BookRoom.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Views\\Room\\BookRoom.cshtml",
+              "RelativeDocumentMoniker": "project_ver1\\Views\\Room\\BookRoom.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Views\\Room\\BookRoom.cshtml",
+              "RelativeToolTip": "project_ver1\\Views\\Room\\BookRoom.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T05:28:48.511Z"
+              "WhenOpened": "2024-06-21T03:54:28.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Views\\RoomEpay\\Index.cshtml",
+              "RelativeDocumentMoniker": "project_ver1\\Views\\RoomEpay\\Index.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Views\\RoomEpay\\Index.cshtml",
+              "RelativeToolTip": "project_ver1\\Views\\RoomEpay\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-21T02:30:25.584Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoomEpayController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Controllers\\RoomEpayController.cs",
+              "RelativeDocumentMoniker": "project_ver1\\Controllers\\RoomEpayController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Controllers\\RoomEpayController.cs",
+              "RelativeToolTip": "project_ver1\\Controllers\\RoomEpayController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAADwvxQAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-21T02:30:46.464Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "BackstageContact.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\BackstageContact.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Home\\BackstageContact.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Home\\BackstageContact.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Home\\BackstageContact.cshtml",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAADUAAAAGAAAA",
+              "Title": "Order.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Views\\Home\\Order.cshtml",
+              "RelativeDocumentMoniker": "project_ver1\\Views\\Home\\Order.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Hotel_C-_Project\\project_ver1\\Views\\Home\\Order.cshtml",
+              "RelativeToolTip": "project_ver1\\Views\\Home\\Order.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADoAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T05:28:24.693Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Room\\Index.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Room\\Index.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Room\\Index.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Room\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T05:00:35.349Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\appsettings.json",
-              "RelativeDocumentMoniker": "project_ver1\\appsettings.json",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\appsettings.json",
-              "RelativeToolTip": "project_ver1\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-12T03:29:13.899Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "SearchRooms.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Room\\SearchRooms.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Room\\SearchRooms.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Room\\SearchRooms.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Room\\SearchRooms.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAB8AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T03:29:03.018Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BookRoom.cshtml",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Room\\BookRoom.cshtml",
-              "RelativeDocumentMoniker": "project_ver1\\Views\\Room\\BookRoom.cshtml",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Views\\Room\\BookRoom.cshtml",
-              "RelativeToolTip": "project_ver1\\Views\\Room\\BookRoom.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAACcAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T03:28:35.737Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "RoomController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Controllers\\RoomController.cs",
-              "RelativeDocumentMoniker": "project_ver1\\Controllers\\RoomController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Hotel\\Hotel_C-_Project\\project_ver1\\Controllers\\RoomController.cs",
-              "RelativeToolTip": "project_ver1\\Controllers\\RoomController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAQwDgAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T03:26:52.969Z"
+              "WhenOpened": "2024-06-20T03:46:48.419Z"
             }
           ]
         }
